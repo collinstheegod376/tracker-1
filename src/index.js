@@ -3,6 +3,7 @@
 // ============================================================
 require('dotenv').config();
 
+const PORT = process.env.PORT || 8080;
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
