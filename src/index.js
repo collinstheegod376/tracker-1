@@ -3,6 +3,7 @@
 // ============================================================
 require('dotenv').config();
 
+const PORT = process.env.PORT || 8080;
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -13,7 +14,7 @@ const subscriptionRoutes = require('./routes/subscriptions');
 const { router: notificationRoutes, sendDueReminders } = require('./routes/notifications');
 
 const app = express();
-const PORT = process.env.PORT || 4000;
+
 
 // ── Security Headers ────────────────────────────────────────
 app.use(helmet());
