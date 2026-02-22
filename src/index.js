@@ -14,7 +14,7 @@ const subscriptionRoutes = require('./routes/subscriptions');
 const { router: notificationRoutes, sendDueReminders } = require('./routes/notifications');
 
 const app = express();
-const PORT = process.env.PORT || 4000;
+
 
 // ── Security Headers ────────────────────────────────────────
 app.use(helmet());
