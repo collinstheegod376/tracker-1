@@ -5,17 +5,17 @@ const staggerDelay = [0, 0.12, 0.24, 0.36, 0.48];
 
 export default function Hero() {
   return (
-    <section className="min-h-[100dvh] flex items-center px-6 md:px-10 max-w-7xl mx-auto relative">
-      {/* Background ambient glow */}
+    <section className="min-h-[100dvh] flex items-center px-6 md:px-10 max-w-7xl mx-auto relative overflow-hidden">
+      {/* Background ambient glow - reduced size for mobile */}
       <div
-        className="absolute top-1/3 left-1/4 w-[500px] h-[500px] rounded-full pointer-events-none"
+        className="absolute top-1/3 left-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] rounded-full pointer-events-none"
         style={{
           background: "radial-gradient(circle, rgba(204,0,0,0.07) 0%, transparent 70%)",
           filter: "blur(60px)",
         }}
       />
 
-      <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center w-full relative z-10">
+      <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center w-full relative z-10 py-12">
         {/* Text Side */}
         <div className="space-y-8">
           {/* Tag line */}
@@ -26,13 +26,13 @@ export default function Hero() {
             className="space-y-3"
           >
             <span
-              className="font-bold uppercase tracking-[0.35em] text-xs"
+              className="font-bold uppercase tracking-[0.35em] text-[10px] md:text-xs"
               style={{ fontFamily: "var(--font-mono)", color: "#ef4444" }}
             >
               System.Identity: SASUKE
             </span>
             <h1
-              className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-none"
+              className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9]"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               Hi, I&apos;m{" "}
@@ -45,7 +45,7 @@ export default function Hero() {
                 Sasuke
               </span>
             </h1>
-            <p className="text-xl md:text-2xl font-semibold" style={{ color: "#c9c5d0" }}>
+            <p className="text-lg md:text-2xl font-semibold" style={{ color: "#c9c5d0" }}>
               Full-Stack Developer
             </p>
           </motion.div>
@@ -108,18 +108,18 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: staggerDelay[3], ease: "easeOut" }}
-            className="flex gap-8 pt-4 border-t"
+            className="flex gap-6 md:gap-8 pt-4 border-t"
             style={{ borderColor: "rgba(255,255,255,0.06)" }}
           >
             {[
-              { value: "3+", label: "Years Exp." },
-              { value: "15+", label: "Projects" },
+              { value: "4+", label: "Years Exp." },
+              { value: "3", label: "Projects" },
               { value: "100%", label: "Dedication" },
             ].map(({ value, label }) => (
               <div key={label}>
-                <p className="text-2xl font-black text-red-600">{value}</p>
+                <p className="text-xl md:text-2xl font-black text-red-600">{value}</p>
                 <p
-                  className="text-xs font-semibold uppercase tracking-widest"
+                  className="text-[9px] md:text-xs font-semibold uppercase tracking-widest"
                   style={{ color: "#737373" }}
                 >
                   {label}

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import Link from "next/link";
 
+
 const navLinks = [
   { href: "#work", label: "Work" },
   { href: "#skills", label: "Skills" },
@@ -86,13 +87,15 @@ export default function Navbar() {
           })}
         </div>
 
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="bg-red-700 hover:bg-red-600 text-white px-5 py-2 rounded-xl font-bold uppercase tracking-widest text-xs transition-colors duration-300 shadow-lg shadow-red-900/30"
-        >
-          Resume
-        </motion.button>
+        <Link href="/resume">
+          <motion.span
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-block bg-red-700 hover:bg-red-600 text-white px-5 py-2 rounded-xl font-bold uppercase tracking-widest text-xs transition-colors duration-300 shadow-lg shadow-red-900/30 cursor-pointer"
+          >
+            Resume
+          </motion.span>
+        </Link>
       </div>
     </motion.nav>
   );

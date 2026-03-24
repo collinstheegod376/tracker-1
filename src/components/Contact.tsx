@@ -12,8 +12,8 @@ const contacts = [
   {
     icon: "alternate_email",
     label: "Twitter / X",
-    value: "@SASUKEFWEB3",
-    href: "https://twitter.com/SASUKEFWEB3",
+    value: "@SASUKEFWWEB3",
+    href: "https://twitter.com/SASUKEFWWEB3",
     truncate: false,
   },
   {
@@ -26,7 +26,7 @@ const contacts = [
   {
     icon: "share",
     label: "LinkedIn",
-    value: "SASUKEFWEB3",
+    value: "SASUKEFWWEB3",
     href: "#",
     truncate: false,
   },
