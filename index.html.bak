@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Sasuke | Full-Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-container": "#cc0000",
+                        "on-surface": "#e4e1e9",
+                        "on-surface-variant": "#e8bdb6",
+                        "surface-container-lowest": "#0e0e13",
+                        "surface-container-low": "#1b1b20",
+                        "surface-container": "#1f1f25",
+                        "surface-container-high": "#2a292f",
+                        "surface-dim": "#131318",
+                        "outline-variant": "#5e3f3a",
+                        "neutral-950": "#0a0a0a",
+                        "neutral-900": "#171717",
+                        "neutral-500": "#737373",
+                        "neutral-400": "#a3a3a3",
+                        "neutral-100": "#f5f5f5",
+                    },
+                    fontFamily: {
+                        "sans": ["Inter", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body { background-color: #131318; color: #e4e1e9; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .crimson-gradient { background: linear-gradient(135deg, #cc0000 0%, #930000 100%); }
+        .glass-nav { background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,0,0,0.1); }
+        
+        /* Custom scrollbar for better PC experience */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0e0e13; }
+        ::-webkit-scrollbar-thumb { background: #35343a; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #cc0000; }
+        
+        /* Smoother transitions */
+        a, button, .group { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+    </style>
+</head>
+<body class="antialiased selection:bg-red-600/30 selection:text-red-200">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 glass-nav font-sans tracking-tight text-on-surface transition-transform duration-500 transform" id="navbar">
+        <div class="flex justify-between items-center w-full px-6 md:px-8 py-4 md:py-6 max-w-7xl mx-auto">
+            <div class="text-2xl font-black tracking-tighter text-red-600 hover:scale-105 cursor-pointer transition-transform">IT.</div>
+            <div class="hidden md:flex gap-8 items-center">
+                <a class="text-red-600 font-bold border-b-2 border-red-600 pb-1" href="#work">Work</a>
+                <a class="text-neutral-400 hover:text-red-500 transition-colors duration-300" href="#skills">Skills</a>
+                <a class="text-neutral-400 hover:text-red-500 transition-colors duration-300" href="#about">About</a>
+                <a class="text-neutral-400 hover:text-red-500 transition-colors duration-300" href="#contact">Contact</a>
+            </div>
+            <button class="bg-primary-container hover:bg-red-700 text-white px-5 py-2 md:px-6 md:py-2.5 rounded-xl font-bold uppercase tracking-widest text-xs shadow-lg shadow-red-900/20 active:scale-95 transition-all">Resume</button>
+        </div>
+    </nav>
+
+    <main class="pt-20 md:pt-24 overflow-hidden">
+        <!-- Hero Section -->
+        <section class="min-h-[100dvh] md:min-h-screen flex items-center px-6 md:px-8 max-w-7xl mx-auto mb-16 md:mb-24 relative">
+            <!-- Background Glow -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] md:w-[40vw] h-[40vw] bg-red-600/5 blur-[120px] rounded-full pointer-events-none"></div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center w-full relative z-10">
+                <div class="space-y-8" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="space-y-3">
+                        <span class="font-mono text-red-600 uppercase tracking-[0.3em] text-xs md:text-sm font-semibold">System.Identity: SASUKE</span>
+                        <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight md:leading-none">
+                            Hi, I'm <br class="md:hidden"/> <span class="text-red-600 drop-shadow-lg">Sasuke</span>
+                        </h1>
+                        <p class="text-xl md:text-3xl font-semibold text-on-surface-variant tracking-tight mt-2">Full-Stack Developer</p>
+                    </div>
+                    <p class="text-base md:text-lg text-neutral-400 max-w-lg leading-relaxed">
+                        Building scalable applications with modern technology stacks. Focused on the intersection of technical excellence and architectural power.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-4">
+                        <a class="crimson-gradient px-8 py-4 rounded-xl text-white font-bold uppercase tracking-widest text-sm text-center shadow-lg shadow-red-900/40 hover:shadow-red-900/60 hover:-translate-y-1 transition-all duration-300" href="#work">View Work</a>
+                        <a class="border border-outline-variant/30 px-8 py-4 rounded-xl text-center font-bold uppercase tracking-widest text-sm hover:bg-surface-container-high hover:border-red-500/30 transition-all duration-300" href="#contact">Contact Me</a>
+                    </div>
+                </div>
+                
+                <div class="relative h-[400px] md:h-[600px] w-full hidden md:flex items-center justify-center animate-float z-0" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
+                    <div class="absolute inset-0 bg-surface-container-low rounded-2xl overflow-hidden border border-red-900/20 shadow-2xl">
+                        <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 2px 2px, #cc0000 1px, transparent 0); background-size: 24px 24px;"></div>
+                        <img class="w-full h-full object-cover mix-blend-overlay grayscale hover:grayscale-0 transition-all duration-1000 scale-105 hover:scale-100" data-alt="abstract geometric pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2_l3U0sj1zeIROIpu8URe1D0Q9qJRU2gyuaoEXzaEgBxGuj5IBjjY0MRYVWno4zbDiUOxFH-eTNKRJdEzWtTQQ_BHjK2K6vezAjgHzxJ0D8nwuIDXS7NvOnrGFHkoV2nhhdB6jGLwnbuHN5l0JPktmO2DAjrETxwLt0RLJcvLsoHF8n3oCRIxvv7lo4IZZ52xwj4N-yjt5ow65FfQEU8tVs6UsdjdfFSDduSosUi8amqm_dbUD9u5ZpGO1AFxIRtIh0h5DuYGOYCI"/>
+                        
+                        <!-- Decorative Elements -->
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-t from-[#131318] via-transparent to-transparent opacity-80 z-10"></div>
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-80 md:h-80 border-[0.5px] border-red-600/30 rotate-45 animate-pulse-slow"></div>
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 md:w-60 md:h-60 border border-red-600/40 -rotate-12 transition-transform duration-700 hover:rotate-0"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Selected Projects -->
+        <section class="px-6 md:px-8 max-w-7xl mx-auto py-20 md:py-24 border-t border-neutral-900/50 relative" id="work">
+            <!-- Background Glow -->
+            <div class="absolute top-0 right-0 w-96 h-96 bg-red-600/5 blur-[100px] rounded-full pointer-events-none"></div>
+
+            <div class="mb-12 md:mb-16" data-aos="fade-up">
+                <span class="font-mono text-xs md:text-sm text-red-600 uppercase tracking-[0.2em] mb-4 block font-semibold">01 // Portfolio</span>
+                <h2 class="text-4xl md:text-5xl font-black tracking-tighter">Selected Project</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12" data-aos="fade-up" data-aos-delay="100">
+                <!-- Project Card: Subscription Tracker -->
+                <div class="group bg-surface-container-low rounded-2xl p-6 md:p-10 border-l-4 border-red-600 flex flex-col justify-between hover:bg-surface-container hover:shadow-2xl hover:shadow-red-900/10 transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden">
+                    <!-- Hover Glow Effect -->
+                    <div class="absolute right-0 top-0 w-32 h-32 bg-red-600/10 blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+
+                    <div class="relative z-10">
+                        <div class="h-56 md:h-72 mb-8 md:mb-10 rounded-xl overflow-hidden bg-surface-dim relative group-hover:ring-1 ring-red-500/30 transition-all">
+                            <!-- Retaining original Analytic Dashboard image, but changing title to Subscription Tracker -->
+                            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-transform duration-1000 ease-out" alt="Subscription Tracker Interface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtClmC3gPvHUZ-GlkvgB8pKVSTMy8oPRtxajVNfj_-sxgzVO3LPEYFHzqPTw7V8_tdQ6k4iVplOALAHhnd2KcN9xja0IS-iGmgPDTow-ybdL_I8OhoJjJuHWEr5xiAtCFfYtBdbDO_NvYSvWByPFLH-aBMtmXEYTc5e5m69gPcFw5bHKLOPrgYy5lJwbbQRghzbtcqcit6dfgMfMKCW-sg0s1WmK-9WYV3JFfCJ0RWUC4jmb1sKaEjKVrjHu6di7MEO_RMfy1l04iX"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#1b1b20] to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-black mb-3 tracking-tight group-hover:text-red-400 transition-colors">Subscription Tracker</h3>
+                        <p class="text-neutral-400 mb-8 md:mb-10 text-base md:text-lg leading-relaxed">A modern real-time data visualization tool and tracker for monitoring subscriptions, user engagement, and metrics with zero latency and high precision.</p>
+                        <div class="flex flex-wrap gap-2 md:gap-3 mb-10">
+                            <span class="font-mono text-[10px] md:text-xs bg-surface-dim border border-red-900/30 text-red-200 px-3 md:px-4 py-1.5 rounded-full uppercase tracking-wider group-hover:border-red-500/50 transition-colors">D3.js</span>
+                            <span class="font-mono text-[10px] md:text-xs bg-surface-dim border border-red-900/30 text-red-200 px-3 md:px-4 py-1.5 rounded-full uppercase tracking-wider group-hover:border-red-500/50 transition-colors">TypeScript</span>
+                            <span class="font-mono text-[10px] md:text-xs bg-surface-dim border border-red-900/30 text-red-200 px-3 md:px-4 py-1.5 rounded-full uppercase tracking-wider group-hover:border-red-500/50 transition-colors">Next.js</span>
+                        </div>
+                    </div>
+                    <a class="inline-flex items-center gap-3 text-red-500 font-bold uppercase tracking-widest text-sm relative z-10 group/btn" href="https://www.subtracker.sbs" target="_blank" rel="noopener noreferrer">
+                        <span>Explore Project</span> 
+                        <span class="material-symbols-outlined text-lg bg-red-600/10 p-2 rounded-full group-hover/btn:bg-red-600 group-hover/btn:text-white group-hover/btn:-rotate-45 transition-all duration-300">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Expertise -->
+        <section class="py-20 md:py-32 bg-surface-container-lowest relative" id="skills">
+            <!-- Grid Background Pattern -->
+            <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#e4e1e9 1px, transparent 1px), linear-gradient(90deg, #e4e1e9 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+            <div class="px-6 md:px-8 max-w-7xl mx-auto relative z-10">
+                <div class="mb-16 md:mb-20 text-center md:text-left" data-aos="fade-up">
+                    <span class="font-mono text-xs md:text-sm text-red-600 uppercase tracking-[0.2em] mb-4 block font-semibold">02 // Capabilities</span>
+                    <h2 class="text-4xl md:text-5xl font-black tracking-tighter">Technical Expertise</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                    <!-- Frontend -->
+                    <div class="group space-y-6 p-8 md:p-10 bg-surface-container-low rounded-2xl border border-transparent hover:border-red-900/30 hover:bg-surface-container hover:-translate-y-2 transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="p-3 bg-red-600/10 rounded-xl group-hover:bg-red-600 group-hover:text-white transition-colors duration-300">
+                                <span class="material-symbols-outlined text-red-600 group-hover:text-white text-3xl md:text-4xl">terminal</span>
+                            </div>
+                            <h4 class="font-black text-xl md:text-2xl uppercase tracking-tight">Frontend</h4>
+                        </div>
+                        <ul class="space-y-4 font-mono text-sm md:text-base text-neutral-400">
+                            <li class="flex items-center gap-4 group/item hover:text-white transition-colors"><div class="w-1.5 h-1.5 bg-red-600 group-hover/item:scale-150 transition-transform rounded-full"></div> React / Next.js</li>
+                            <li class="flex items-center gap-4 group/item hover:text-white transition-colors"><div class="w-1.5 h-1.5 bg-red-600 group-hover/item:scale-150 transition-transform rounded-full"></div> Tailwind CSS</li>
+                            <li class="flex items-center gap-4 group/item hover:text-white transition-colors"><div class="w-1.5 h-1.5 bg-red-600 group-hover/item:scale-150 transition-transform rounded-full"></div> TypeScript</li>
+                            <li class="flex items-center gap-4 group/item hover:text-white transition-colors"><div class="w-1.5 h-1.5 bg-red-600 group-hover/item:scale-150 transition-transform rounded-full"></div> Three.js / WebGL</li>
+                            <li class="flex items-center gap-4 group/item hover:text-white transition-colors"><div class="w-1.5 h-1.5 bg-red-600 group-hover/item:scale-150 transition-transform rounded-full"></div> Framer Motion</li>
+                        </ul>
+                    </div>
+
+                    <!-- Backend -->
+                    <div class="group space-y-6 p-8 md:p-10 bg-surface-container-low rounded-2xl border border-transparent hover:border-red-900/30 hover:bg-surface-container hover:-translate-y-2 transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="p-3 bg-red-600/10 rounded-xl group-hover:bg-red-600 group-hover:text-white transition-colors duration-300">
+                                <span class="material-symbols-outlined text-red-600 group-hover:text-white text-3xl md:text-4xl">database</span>
+                            </div>
+                            <h4 class="font-black text-xl md:text-2xl uppercase tracking-tight">Backend</h4>
+                        </div>
+                        <ul class="space-y-4 font-mono text-sm md:text-base text-neutral-400">
+                            <li class="flex items-center gap-4 group/item hover:text-white transition-colors"><div class="w-1.5 h-1.5 bg-red-600 group-hover/item:scale-150 transition-transform rounded-full"></div> Node.js / Express</li>
+                            <li class="flex items-center gap-4 group/item hover:text-white transition-colors"><div class="w-1.5 h-1.5 bg-red-600 group-hover/item:scale-150 transition-transform rounded-full"></div> PostgreSQL / Prisma</li>
+                            <li class="flex items-center gap-4 group/item hover:text-white transition-colors"><div class="w-1.5 h-1.5 bg-red-600 group-hover/item:scale-150 transition-transform rounded-full"></div> MongoDB</li>
+                            <li class="flex items-center gap-4 group/item hover:text-white transition-colors"><div class="w-1.5 h-1.5 bg-red-600 group-hover/item:scale-150 transition-transform rounded-full"></div> GraphQL / Apollo</li>
+                            <li class="flex items-center gap-4 group/item hover:text-white transition-colors"><div class="w-1.5 h-1.5 bg-red-600 group-hover/item:scale-150 transition-transform rounded-full"></div> Redis Caching</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="px-6 md:px-8 max-w-7xl mx-auto py-24 md:py-32 relative" id="about">
+            <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
+                <span class="font-mono text-xs md:text-sm text-red-600 uppercase tracking-[0.2em] mb-6 block font-semibold">03 // The Architect</span>
+                <h2 class="text-4xl md:text-5xl font-black tracking-tighter mb-10">Professional Summary</h2>
+                <div class="space-y-8 text-lg md:text-xl text-on-surface-variant leading-relaxed text-left md:text-center font-medium">
+                    <p>
+                        I am a software engineer driven by the philosophy of "The Stoic Monolith"—building systems that are robust, silent, and incredibly powerful. With a deep background in full-stack development, I specialize in crafting digital experiences that bridge the gap between complex backend logic and intuitive, high-impact user interfaces.
+                    </p>
+                    <p>
+                        My approach to engineering is calculated and disciplined. Whether I'm optimizing a PostgreSQL query or refining a frontend interface, my goal is always to achieve the highest level of performance with the most elegant implementation. I believe that true professional development comes from the continuous pursuit of technical perfection.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Get In Touch -->
+        <section class="px-6 md:px-8 max-w-7xl mx-auto py-20 md:py-24 mb-10 md:mb-24 border-t border-neutral-900/50 relative" id="contact">
+            <div class="mb-12 md:mb-16" data-aos="fade-up">
+                <span class="font-mono text-xs md:text-sm text-red-600 uppercase tracking-[0.2em] mb-4 block font-semibold">04 // Secure Channel</span>
+                <h2 class="text-4xl md:text-5xl font-black tracking-tighter">Get In Touch</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6">
+                <!-- Email -->
+                <a class="p-8 md:p-10 bg-surface-container-low rounded-2xl border border-neutral-900/50 hover:bg-surface-container hover:border-red-600/30 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden" href="mailto:collinstheegod@gmail.com" data-aos="fade-up" data-aos-delay="0">
+                    <div class="absolute inset-0 bg-gradient-to-br from-red-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <span class="material-symbols-outlined text-red-600 mb-6 text-3xl block group-hover:scale-110 transition-transform origin-left">mail</span>
+                    <p class="font-mono text-[10px] md:text-xs text-neutral-500 uppercase mb-2 tracking-widest relative z-10">Email</p>
+                    <p class="font-bold text-sm md:text-base truncate relative z-10 group-hover:text-white transition-colors">collinstheegod@gmail.com</p>
+                </a>
+                
+                <!-- Twitter -->
+                <a class="p-8 md:p-10 bg-surface-container-low rounded-2xl border border-neutral-900/50 hover:bg-surface-container hover:border-red-600/30 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden" href="https://twitter.com/SASUKEFWEB3" target="_blank" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute inset-0 bg-gradient-to-br from-red-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <span class="material-symbols-outlined text-red-600 mb-6 text-3xl block group-hover:scale-110 transition-transform origin-left">alternate_email</span>
+                    <p class="font-mono text-[10px] md:text-xs text-neutral-500 uppercase mb-2 tracking-widest relative z-10">Twitter</p>
+                    <p class="font-bold text-sm md:text-base relative z-10 group-hover:text-white transition-colors">@SASUKEFWEB3</p>
+                </a>
+                
+                <!-- Phone -->
+                <a class="p-8 md:p-10 bg-surface-container-low rounded-2xl border border-neutral-900/50 hover:bg-surface-container hover:border-red-600/30 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden" href="tel:08136634819" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute inset-0 bg-gradient-to-br from-red-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <span class="material-symbols-outlined text-red-600 mb-6 text-3xl block group-hover:scale-110 transition-transform origin-left">call</span>
+                    <p class="font-mono text-[10px] md:text-xs text-neutral-500 uppercase mb-2 tracking-widest relative z-10">Phone</p>
+                    <p class="font-bold text-sm md:text-base relative z-10 group-hover:text-white transition-colors">08136634819</p>
+                </a>
+                
+                <!-- LinkedIn -->
+                <a class="p-8 md:p-10 bg-surface-container-low rounded-2xl border border-neutral-900/50 hover:bg-surface-container hover:border-red-600/30 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden" href="#" data-aos="fade-up" data-aos-delay="300">
+                    <div class="absolute inset-0 bg-gradient-to-br from-red-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <span class="material-symbols-outlined text-red-600 mb-6 text-3xl block group-hover:scale-110 transition-transform origin-left">share</span>
+                    <p class="font-mono text-[10px] md:text-xs text-neutral-500 uppercase mb-2 tracking-widest relative z-10">LinkedIn</p>
+                    <p class="font-bold text-sm md:text-base relative z-10 group-hover:text-white transition-colors">SASUKEFWEB3</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 w-full py-12 md:py-16 border-t border-neutral-900/80 relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full md:w-[800px] h-px bg-gradient-to-r from-transparent via-red-600/50 to-transparent"></div>
+        <div class="flex flex-col items-center gap-4 md:gap-6 w-full px-8 relative z-10">
+            <div class="text-xl md:text-2xl font-black text-red-600 tracking-tighter hover:scale-110 transition-transform cursor-pointer">IT.</div>
+            <p class="font-mono text-[10px] md:text-xs uppercase tracking-[0.2em] text-neutral-500">© 2026 IT. All rights reserved.</p>
+            <div class="flex gap-6 md:gap-8 mt-2 md:mt-4">
+                <a class="font-mono text-[10px] md:text-xs uppercase tracking-[0.1em] text-neutral-500 hover:text-red-500 transition-colors" href="#">Privacy Policy</a>
+                <a class="font-mono text-[10px] md:text-xs uppercase tracking-[0.1em] text-neutral-500 hover:text-red-500 transition-colors" href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- AOS Animation Engine -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Init AOS Animations
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50,
+            easing: 'ease-out-cubic',
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-xl', 'shadow-black/50', 'bg-neutral-950/90');
+                navbar.classList.remove('bg-neutral-950/80', 'py-4', 'md:py-6');
+                navbar.classList.add('py-3', 'md:py-4');
+            } else {
+                navbar.classList.remove('shadow-xl', 'shadow-black/50', 'bg-neutral-950/90', 'py-3', 'md:py-4');
+                navbar.classList.add('bg-neutral-950/80', 'py-4', 'md:py-6');
+            }
+        });
+    </script>
+</body>
+</html>
