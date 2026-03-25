@@ -112,7 +112,7 @@ export default function Hero() {
             style={{ borderColor: "rgba(255,255,255,0.06)" }}
           >
             {[
-              { value: "4+", label: "Years Exp." },
+              { value: "4", label: "Months Exp." },
               { value: "3", label: "Projects" },
               { value: "100%", label: "Dedication" },
             ].map(({ value, label }) => (

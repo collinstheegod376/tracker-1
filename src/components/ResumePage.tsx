@@ -2,30 +2,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const experience = [
-  {
-    role: "Full-Stack Developer",
-    company: "Freelance / Independent",
-    period: "2022 — Present",
-    bullets: [
-      "Designed and shipped production-grade web applications for clients across fintech, e-commerce, and SaaS verticals.",
-      "Built the Subscription Tracker (subtracker.sbs) — a real-time monitoring dashboard with Next.js, TypeScript, and PostgreSQL.",
-      "Architected Node.js REST APIs and GraphQL services handling high-concurrency workloads.",
-      "Integrated Supabase authentication and real-time features with Row-Level Security policies.",
-    ],
-  },
-  {
-    role: "Frontend Engineer",
-    company: "Contract Projects",
-    period: "2021 — 2022",
-    bullets: [
-      "Delivered pixel-perfect, responsive UIs using React and Tailwind CSS from Figma designs.",
-      "Implemented complex animations with Framer Motion and Three.js / WebGL for interactive 3D experiences.",
-      "Optimised Core Web Vitals scores (LCP, CLS, FID) to achieve Lighthouse scores of 95+.",
-    ],
-  },
-];
-
 const projects = [
   {
     name: "Subscription Tracker",
@@ -34,34 +10,18 @@ const projects = [
     description:
       "A real-time subscription monitoring dashboard with analytics charts, multi-currency support, and automated renewal alerts. Live at subtracker.sbs.",
   },
-  {
-    name: "Web3 DEX Platform",
-    url: "#",
-    stack: ["Solidity", "Ethers.js", "React", "Node.js"],
-    description:
-      "Decentralised exchange supporting token swaps, liquidity pools, and real-time yield tracking across EVM-compatible chains.",
-  },
-  {
-    name: "E-Commerce Backend",
-    url: "#",
-    stack: ["Node.js", "PostgreSQL", "Redis", "Docker"],
-    description:
-      "Scalable microservices architecture handling thousands of concurrent transactions, with Redis caching and automated CI/CD pipelines.",
-  },
 ];
 
 const skills = {
   Frontend: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Three.js", "Framer Motion"],
   Backend: ["Node.js", "Express", "GraphQL", "PostgreSQL", "MongoDB", "Redis"],
-  DevOps: ["Docker", "AWS", "Vercel", "Nginx", "CI/CD", "Linux"],
-  Web3: ["Solidity", "Ethers.js", "Hardhat", "IPFS", "Smart Contracts"],
 };
 
 const education = [
   {
     degree: "Self-Taught Full-Stack Engineering",
     institution: "Online Curriculum (freeCodeCamp, The Odin Project, Udemy, MDN)",
-    period: "2020 — Present",
+    period: "2026 — Present",
     detail: "Continuous learning covering data structures, system design, and modern web technologies.",
   },
 ];
@@ -83,7 +43,6 @@ export default function ResumePage() {
           className="flex items-center gap-2 text-sm font-semibold transition-colors hover:text-red-400"
           style={{ color: "#a3a3a3", fontFamily: "var(--font-mono)" }}
         >
-          <span className="material-symbols-outlined" style={{ fontSize: "18px" }}>arrow_back</span>
           Back to Portfolio
         </Link>
         <span className="text-2xl font-black tracking-tighter text-red-600 select-none">IT.</span>
@@ -133,14 +92,10 @@ export default function ResumePage() {
             {[
               { icon: "mail", label: "collinstheegod@gmail.com", href: "mailto:collinstheegod@gmail.com" },
               { icon: "call", label: "08136634819", href: "tel:08136634819" },
-              { icon: "alternate_email", label: "@SASUKEFWWEB3", href: "https://twitter.com/SASUKEFWWEB3" },
-              { icon: "language", label: "subtracker.sbs", href: "https://www.subtracker.sbs" },
             ].map(({ icon, label, href }) => (
               <a
                 key={label}
                 href={href}
-                target={href.startsWith("http") ? "_blank" : undefined}
-                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
                 className="flex items-center gap-2 text-sm transition-colors hover:text-red-400"
                 style={{ color: "#737373", fontFamily: "var(--font-mono)" }}
               >
@@ -153,53 +108,6 @@ export default function ResumePage() {
 
         {/* ── DIVIDER ── */}
         <div className="h-px mb-16" style={{ background: "linear-gradient(90deg, #cc0000 0%, transparent 100%)" }} />
-
-        {/* ── EXPERIENCE ── */}
-        <section className="mb-16">
-          <motion.h2 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0, ease: "easeOut" }}
-            className="text-xs font-bold uppercase tracking-[0.3em] mb-10 flex items-center gap-4"
-            style={{ fontFamily: "var(--font-mono)", color: "#ef4444" }}
-          >
-            Work Experience
-            <span className="flex-1 h-px" style={{ background: "rgba(204,0,0,0.2)" }} />
-          </motion.h2>
-
-          <div className="space-y-12">
-            {experience.map((job, i) => (
-              <motion.div 
-                key={job.role} 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1, ease: "easeOut" }}
-                className="grid md:grid-cols-[200px_1fr] gap-4 md:gap-8"
-              >
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-widest mb-1"
-                    style={{ fontFamily: "var(--font-mono)", color: "#525252" }}>
-                    {job.period}
-                  </p>
-                  <p className="text-xs font-semibold" style={{ color: "#737373" }}>{job.company}</p>
-                </div>
-                <div>
-                  <h3 className="text-lg font-black mb-4 text-red-400">{job.role}</h3>
-                  <ul className="space-y-3">
-                    {job.bullets.map((b) => (
-                      <li key={b} className="flex gap-3 text-sm leading-relaxed" style={{ color: "#c9c5d0" }}>
-                        <span className="w-1 h-1 mt-2 rounded-full flex-shrink-0 bg-red-600" />
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </section>
 
         {/* ── PROJECTS ── */}
         <section className="mb-16">
@@ -276,7 +184,7 @@ export default function ResumePage() {
             <span className="flex-1 h-px" style={{ background: "rgba(204,0,0,0.2)" }} />
           </motion.h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {Object.entries(skills).map(([category, items], i) => (
               <motion.div
                 key={category}
@@ -351,7 +259,7 @@ export default function ResumePage() {
           style={{ background: "#1b1b20", border: "1px solid rgba(204,0,0,0.15)" }}
         >
           {[
-            { value: "4+", label: "Years of Experience" },
+            { value: "4", label: "Months of Experience" },
             { value: "3", label: "Shipped Projects" },
             { value: "100%", label: "Dedication" },
           ].map(({ value, label }) => (
